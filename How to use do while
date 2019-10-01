@@ -1,0 +1,64 @@
+/**Write a program that displays a menu with options 1. Add 2. Sub
+ * Based on the options chosen, read 2 numbers and perform the relevant operation.
+ * After performing the operation, the program should ask the user if he wants to 
+ * continue. If the user presses y or Y, then the program should continue 
+ * displaying the menu else the program should terminate.
+ */
+
+package p10;
+import java.util.Scanner;
+
+public class P10 {
+
+
+    public static void main(String[] args) {
+        //declaration
+        char input;
+        
+        //Scanner object
+        Scanner scan = new Scanner(System.in);
+        System.out.println("CALCULATION MENU");
+        
+     //do will execute statements  
+    do{    
+        //requests user input
+        System.out.println("Options:\n 1)For Addition Press 1\n 2)For Subtraction Press 2 ");
+        int userInput = scan.nextInt();
+        //if user chooses 1 then a series of question will follow
+            if(userInput == 1){
+                System.out.println("You have chosen addition ");
+                System.out.print("Please enter the first number: ");
+                int num1 = scan.nextInt();
+                System.out.print("Please enter the second number: ");
+                int num2 = scan.nextInt();
+                //calculates
+                int addition = num1 + num2;
+                System.out.println("Answer is " + addition);
+            }
+            else if(userInput == 2){
+                System.out.println("You have chosen Subtraction ");
+                System.out.print("Please enter the first number: ");
+                int num1 = scan.nextInt();
+                System.out.print("Please enter the second number: ");
+                int num2 = scan.nextInt();
+                //calculates
+                int subtractions = num1 - num2;
+                System.out.println("Answer is " + subtractions);
+            }
+            else{
+                System.out.println("Invalid input");
+            }
+           // Get the choice from the user to add/subtract more numbers
+         System.out.println("Do you want to continue? type y to continue or N to stop");
+         input = scan.next().charAt(0);
+        }
+    //continue to work as long as the user chooses Y
+        while((input=='y' || input=='Y'));
+        
+       
+        
+        
+        
+    }
+    
+}
